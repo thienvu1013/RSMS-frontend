@@ -1,0 +1,187 @@
+@font-face{
+    font-family: "Montserrat";
+    src: url("Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+  }
+  
+  @font-face{
+    font-family: "Montserrat";
+    src: url("Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+  }
+  
+  @font-face{
+    font-family: "Montserrat";
+    src: url("Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+  }
+  
+  @font-face{
+    font-family: "FredokaOne";
+    src: url("FredokaOne-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+
+body{
+    /* background-color: #D7DEEA; */
+    background: rgb(182,199,232);
+    background: linear-gradient(180deg, rgba(182,199,232,1) 0%, rgba(227,196,196,1) 100%);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2C3F71;
+    text-align: left;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-family: "FredokaOne", sans-serif;
+    font-weight: 400;
+    font-size: 110px;
+  }
+
+
+h2 {
+font-family: "FredokaOne", sans-serif;
+font-weight: 400;
+font-size: 50px;
+}
+
+
+a {
+    color: #2C3F71;
+    text-decoration: none;
+  }
+  
+a:hover {
+color: #DBBD97;
+}
+
+
+.nav {
+    /* position: absolute; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+  }
+  
+.nav li {
+display: inline;
+padding-bottom: 5px;
+margin-left: 30px;
+}
+
+.nav li:hover {
+    border-bottom: 2px solid #D7DEEA;
+  }
+
+.hero .btn:hover{
+    color: #2C3F71;
+    background-color: #DBBD97;
+}
+
+.hero .btn{
+    background-color: #2C3F71;
+    color:#DBBD97;
+    margin: 75px 20px;
+    padding:20px 20px;
+}
+
+
+.hero {
+background: url(../images/home.svg) no-repeat center;
+background-size:75%;
+background-position: right;
+height:100vh;
+}
+
+.btn-primary{
+    background-color: #2C3F71;
+    color:#DBBD97;
+}
+
+.btn-primary:disabled{
+    background-color: hsl(223, 29%, 38%);
+    color:#DBBD97;
+}
+
+/* Inventory and customer */
+
+
+.content .btn{
+    background-color: #2C3F71;
+    color:#DBBD97;
+    padding:10px 10px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.content .btn:hover{
+    color: #2C3F71;
+    background-color: #DBBD97;
+}
+
+.button-group .btn{
+    background-color: #2C3F71;
+    color:#DBBD97;
+    padding:10px 20px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.button-group .btn:hover{
+    color: #2C3F71;
+    background-color: #DBBD97;
+}
+
+.content h2{
+    display: inline;
+}
+
+.result-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+hr{
+    margin:0;
+    border: 0;
+    border-top: 3px solid #2C3F71;
+}
+
+.search-button{
+    background-color: #2C3F71;
+    color:#DBBD97;
+}
+
+.search-button:hover{
+    background-color: #DBBD97;
+    color:#2C3F71;
+}
+
+.input-group{
+    height:50px;
+}
+
+.search-text{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.dropdown-menu {         
+    max-height: 300px;
+    overflow-y: auto;
+  }

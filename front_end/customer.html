@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Customer Management System</title>
+</head>
+<body>
+    <div class="home container p-2">
+        <div class="nav flex-row-reverse">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="inventory.html">inventory</a></li>
+                <li><a href="customer.html">customer</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>Customer Management</h2>
+            <button type="button" class="btn add-new" data-bs-toggle="modal" data-bs-target="#addNew">add new</button>
+        </div>
+        <form class="search-bar">
+            <div class="input-group">
+                <input type="text" id="searchText" class="search-text form-control" aria-label="search bar">
+                <button type="button" class=" search-button btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">search criteria</span>
+                </button>
+                <ul class="search-criteria dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">first_name</a></li>
+                    <li><a class="dropdown-item" href="#">last_name</a></li>
+                    <li><a class="dropdown-item" href="#">id</a></li>
+                    <li><a class="dropdown-item" href="#">type</a></li>
+                </ul>
+                <button type="submit" class=" search-button btn btn-outline-secondary">search</button>
+            </div>
+        </form>
+        <div class="search-results"></div>
+    </div>
+
+    <!-- Add item Modal -->
+    <div class="modal fade" id="addNew" data-bs-backdrop="static" data-bs-keyboard="false" data-bs-toggle="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class ="registration-form">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Customer Registration Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Last Name</label>
+                                <input  class="form-control" id="last_name_input" placeholder=" " value="">
+                            </div>
+                            <div class="col">
+                                <label  class="form-label">First Name</label>
+                                <input  class="form-control" id="first_name_input" placeholder=" " value="">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Phone</label>
+                                <input  class="form-control" id="phone_input" placeholder=" " value="">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Address</label>
+                                <input  class="form-control" id="address_input" placeholder=" " value="">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Postal</label>
+                                <input  class="form-control" id="postal_input" placeholder=" " value="">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="customer_type_list" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Type
+                                </button>
+                                <ul class="dropdown-menu type-list" aria-labelledby="supplier list">
+                                    <li><a class="dropdown-item" href="#">Residential</a></li>
+                                    <li><a class="dropdown-item" href="#">Commercial</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary add-item" data-bs-toggle="modal" data-bs-target="#addNew">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- item detail modal-->
+    <div class="modal fade" id="seeDetails" data-bs-backdrop="static" data-bs-keyboard="false" data-bs-toggle="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class ="detail-form">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Customer Detail</h5>
+                        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">ID</label>
+                                <p id="customer_id"></p>
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">First Name</label>
+                                <input  class="form-control detail-input" id="customer_first_name_detail" disabled placeholder=" ">
+                            </div>
+                            <div class="col">
+                                <label  class="form-label">Last Name</label>
+                                <input  class="form-control detail-input" id="customer_last_name_detail" disabled placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Address</label>
+                                <input  class="form-control detail-input" id="customer_address_detail" disabled placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Postal</label>
+                                <input  class="form-control detail-input" id="customer_postal_detail" disabled placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="col">
+                                <label  class="form-label">Phone</label>
+                                <input  class="form-control detail-input" id="customer_phone_detail" disabled placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="row container">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="detail-customer-type-list" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                                    Type
+                                </button>
+                                <ul class="dropdown-menu detail-type-list" aria-labelledby="detail customer type list">
+                                    <li><a class="dropdown-item" href="#">Residential</a></li>
+                                    <li><a class="dropdown-item" href="#">Commercial</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary edit-customer">Edit</button>
+                        <button type="submit" class="btn btn-primary save-customer" data-bs-target="#seeDetails" data-bs-toggle="modal" disabled>Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- toast -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+        <div id="liveToast" class="toast show d-none" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Message</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/customer.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>
