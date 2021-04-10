@@ -1,4 +1,4 @@
-const url = 'ttps://rsms-api.herokuapp.com/'
+const url = 'https://rsms-api.herokuapp.com/'
 
 let searchObject = {
     'search_term': '',
